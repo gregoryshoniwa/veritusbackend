@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "126060bb-8cef-4df9-992f-fa57155614b2",
+		"name": "ContiPay API v2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Acquire Inititiate Transaction",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "606f4c36-65e5-4df8-b061-d941f841ec18",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "ZEZuekRPSm1vdldVWGtqVXk0cUxQdz09",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customer\": {\n        \"nationalId\": \"\",\n        \"surname\": \"Kamundaranga\",\n        \"firstName\": \"Eddie\",\n        \"middleName\": \"Tashinga\",\n        \"email\": \"eddie.kamundaranga@contitouch.co.zw\",\n        \"cell\": 776214824,\n        \"countryCode\": \"ZW\"\n    },\n    \"transaction\": {\n        \"currencyCode\": \"ZMW\",\n        \"providerCode\": \"MN\",\n        \"amount\": 15.20,\n        \"webhookUrl\": \"test.com\",\n        \"merchantId\": \"3\",\n        \"description\": \"Payment Description\",\n        \"reference\": \"6\"\n    },\n    \"account\": {\n        \"accountNumber\": \"0776214825\",\n        \"accountName\": \"Edmore Kamundaranga\",\n        \"accountExtra\": {\n            \"code\": \"003\",\n            \"expiry\": \"122020\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-dev.contipay.co.zw/acquire/payment",
+					"protocol": "https",
+					"host": [
+						"api-dev",
+						"contipay",
+						"co",
+						"zw"
+					],
+					"path": [
+						"acquire",
+						"payment"
+					]
+				},
+				"description": "Initiate a ContiPay Transaction so as to obtain url for payment completion"
+			},
+			"response": []
+		},
+		{
+			"name": "Acquire Inititiate Transaction 1",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "43ce6d14-33dc-48d1-8114-8e447da224bb",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "NytMeDQzaWFhQ3R2YTBkaDVrMnJCZz09",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"webhookUrl\": \"https://api-dev.contipay.co.zw\",\n    \"description\": \"Internet Bandwith Payment #198\",\n    \"amount\": 25,\n    \"reference\": \"90000000179\",\n    \"merchantId\": 4,\n    \"currencyCode\": \"USD\",\n    \"successUrl\": \"https://www.contipay.co.zw/success\",\n    \"cancelUrl\": \"https://www.contipay.co.zw\",\n    \"customer\": {\n        \"nationalId\":null,\n        \"firstName\":\"Eddie\",\n        \"surname\":\"Kamundaranga\",\n        \"middleName\":\"\",\n        \"email\":\"edmore.yello@gmail.com\",\n        \"cell\":776214825,\n        \"countryCode\":\"zw\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api-dev.contipay.co.zw/acquire/payment",
+					"protocol": "http",
+					"host": [
+						"api-dev",
+						"contipay",
+						"co",
+						"zw"
+					],
+					"path": [
+						"acquire",
+						"payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ContiPay Receive Response",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "NytMeDQzaWFhQ3R2YTBkaDVrMnJCZz09",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "43ce6d14-33dc-48d1-8114-8e447da224bb",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": " application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"GwalTraceId\": null,\n    \"UserLocale\": null,\n    \"ApiIdType\": \"RES\",\n    \"Tier1AgentId\": null,\n    \"Tier1AgentName\": null,\n    \"Tier2AgentId\": null,\n    \"Tier3AgentId\": null,\n    \"Tier1AgentPassword\": null,\n    \"CustomerPhoneNumber\": \"263732214825\",\n    \"NationalID\": null,\n    \"SenderFirstName\": null,\n    \"SenderLastName\": null,\n    \"TransactionType\": \"500\",\n    \"InstrumentType\": \"1\",\n    \"ProcessorCode\": \"0026\",\n    \"CashInAmount\": null,\n    \"PaymentDetails1\": \"6666\",\n    \"PaymentDetails2\": null,\n    \"PaymentDetails3\": null,\n    \"PaymentDetails4\": null,\n    \"TxnAmount\": \"10\",\n    \"CurrencyType\": null,\n    \"NetTxnAmount\": null,\n    \"FeeAmount\": null,\n    \"TaxAmount\": null,\n    \"Country\": null,\n    \"RequestId\": \"TC15888515433102\",\n    \"TerminalID\": null,\n    \"TxnStatus\": \"1\",\n    \"ErrorCode\": \"013\",\n    \"OpsTransactionId\": null,\n    \"TransactionDate\": \"2020-05-07T13:38:38.832+02:00\",\n    \"Remark\": \"Error - Invalid OTP\",\n    \"Reference1\": \"ONUS\",\n    \"Reference2\": null,\n    \"Reference3\": null,\n    \"Reference4\": null,\n    \"Reference5\": \"013\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-v2.contipay.co.zw/acquire/response?correlator=84",
+					"protocol": "https",
+					"host": [
+						"api-v2",
+						"contipay",
+						"co",
+						"zw"
+					],
+					"path": [
+						"acquire",
+						"response"
+					],
+					"query": [
+						{
+							"key": "correlator",
+							"value": "84"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ContiPay Transfer Notify",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"refNumber\": \"7897249056\",\n    \"fromName\": \"CHU KUAN YU MR\",\n    \"fromLastname\": \"NA\",\n    \"fromCell\": \"NA\",\n    \"fromAccount\": \"25512110010\",\n    \"amount\": \"73.22\",\n    \"description\": \" #222    CBZ BANK REF 021FTMC202210085\",\n    \"contentType\": \"application\\/json\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-dev.contipay.co.zw/disburse/response?transfer=true",
+					"protocol": "https",
+					"host": [
+						"api-dev",
+						"contipay",
+						"co",
+						"zw"
+					],
+					"path": [
+						"disburse",
+						"response"
+					],
+					"query": [
+						{
+							"key": "transfer",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
